@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+        package="com.generator.android.softkeyboard" android:versionCode="1" android:versionName="Seekey 1.0">
+        
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="14" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name = "android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+      
+     <application android:label="@string/ime_name" android:theme="@android:style/Theme.Holo" android:icon="@drawable/filosofiacomputacao">
+           
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.ads.AdActivity"/>
+        
+        <service android:name="com.exa.android.softkeyboard.SoftKeyboard"
+                android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+
+        <activity android:name="com.exa.android.softkeyboard.ImePreferences" android:label="@string/settings_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+		<activity 
+		    
+		    android:name="com.exa.android.softkeyboard.Settings"
+		    
+		    ></activity>
+        <activity android:name="com.exa.android.softkeyboard.LoggerView"></activity>
+         <activity android:name="com.exa.android.softkeyboard.Login"></activity>
+         <service android:name="com.generator.android.softkeyboard" />
+    </application>
+    
+    
+</manifest>

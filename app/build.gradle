@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.0'
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+android {
+    compileSdkVersion 'Google Inc.:Google APIs:19'
+    buildToolsVersion '23.0.3'
+    defaultConfig {
+        versionCode 1
+        minSdkVersion 12
+        targetSdkVersion 14
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable false
+        }
+    }
+
+    productFlavors {
+    }
+    buildTypes {
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('build/lib/java-mail-1.4.4.jar')
+    compile files('build/lib/activation-1.1.1.jar')
+}
