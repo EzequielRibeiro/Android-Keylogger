@@ -46,22 +46,6 @@ public class Login extends Activity {
 		super.onCreate(e);
 		setContentView(R.layout.login);
 		setTitle("SeeKey 1.0");
-
-		/*
-		EnviarMail env = new EnviarMail();
-		
-		
-		
-		try {
-			//env.sendEmail("ezequiel.ribeiro@gmail.com", "ezequiel.ribeiro@gmail.com","eze344363eze", "subjetive", "teste"," ");
-		    
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		*/
-		
 		
 		settings = getSharedPreferences(PREFS_NAME, 0);
 
